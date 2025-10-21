@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('head.html', {})
+    <body>
+        <main id="wrapper">
+            <div class="preloader" id="preloader"></div>
+            @@include('html/components/header.html', {})
+            <div data-router-wrapper>
+                <div data-router-view="default">
+                    @@include('html/home/hero.html', {}) @@include('html/home/work-areas.html', {})
+                    @@include('html/home/about.html', {}) @@include('html/home/reputation.html', {})
+                    @@include('html/home/adventages.html', {}) @@include('html/home/cases.html', {})
+                    @@include('html/home/contact-us.html', {})
+                </div>
+            </div>
+            @@include('html/components/footer.html', {})
+        </main>
+        <script src="js/app.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    </body>
+</html>

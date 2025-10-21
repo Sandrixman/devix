@@ -1,0 +1,38 @@
+.burger {
+    width: 52px;
+    height: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 100;
+}
+
+.burger span {
+    height: 4px;
+    width: 100%;
+    background: var(--color-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.burger.active span:nth-child(1) {
+    transform: translateY(14px);
+}
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+.burger.active span:nth-child(3) {
+    transform: translateY(-17px);
+}
+
+.burger.active.cross span:nth-child(1) {
+    transform: translateY(14px) rotate(45deg);
+}
+.burger.active.cross span:nth-child(3) {
+    transform: translateY(-14px) rotate(-45deg);
+}

@@ -1,0 +1,138 @@
+.header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 40rem;
+    left: 40rem;
+    width: calc(100% - 80rem);
+    transition: top 0.3s;
+    z-index: 100;
+
+    @include maxWidth($sm) {
+        width: calc(100% - 32rem);
+        top: 16rem;
+        left: 16rem;
+    }
+
+    &-panel {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &-logo {
+            width: 46rem;
+            height: 46rem;
+            z-index: 2;
+
+            @include minWidth($sm) {
+                margin-right: 264rem;
+            }
+
+            @include maxWidth($sm) {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-wrapper {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+
+            @include maxWidth($sm) {
+                display: none;
+            }
+        }
+
+        &-info {
+            max-width: 185rem;
+            letter-spacing: -0.02em;
+            opacity: 0.3;
+
+            @include maxWidth($sm) {
+                display: none;
+            }
+        }
+
+        &-nav-desk {
+            ul {
+                display: flex;
+                gap: 40rem;
+            }
+
+            li {
+                position: relative;
+                display: flex;
+                gap: 6rem;
+
+                a {
+                    position: relative;
+                    white-space: nowrap;
+                    transition: color var(--transition-duration) var(--transition-easing);
+                    z-index: 1;
+
+                    @include hover($md) {
+                        &:hover {
+                            color: var(--color-footer-hover);
+                        }
+                    }
+                }
+            }
+        }
+
+        &-nav-mob {
+            display: none;
+            position: fixed;
+            top: -100svh;
+            left: 0;
+            width: calc(100% + 30rem);
+            height: 100svh;
+            background: var(--color-black);
+            text-align: center;
+            margin: -40rem -15rem 0;
+            transition: top 0.4s ease;
+
+            @include maxWidth($sm) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &.active {
+                top: 0;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                margin: 60rem 0;
+            }
+
+            a {
+                color: var(--color-white);
+                font-size: 40rem;
+            }
+        }
+
+        &-action {
+            display: flex;
+            gap: 12rem;
+            margin-left: 44rem;
+
+            @include maxWidth($sm) {
+                align-items: center;
+            }
+
+            .burger {
+                @include minWidth($sm) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

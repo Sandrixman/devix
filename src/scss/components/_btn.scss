@@ -1,0 +1,40 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    border: solid var(--color-white) 1rem;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    width: 142rem;
+    height: 32rem;
+    min-height: 32rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &-circle {
+        width: 191rem;
+        height: 191rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 100%;
+        background: #ffffff17;
+        padding: 40rem;
+        font: var(--font-body-m);
+        text-transform: uppercase;
+
+        @include maxWidth($sm) {
+            width: 140rem;
+            height: 140rem;
+            font: var(--font-body-m-mobile);
+        }
+    }
+
+    &:hover {
+        color: var(--color-black);
+        background: var(--color-white);
+    }
+}

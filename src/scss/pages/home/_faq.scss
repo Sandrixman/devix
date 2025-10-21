@@ -1,0 +1,46 @@
+.faq {
+    margin-bottom: 144rem;
+    @include maxWidth($sm) {
+        margin-bottom: 80rem;
+    }
+
+    &-sticky {
+        padding-top: 13rem;
+        position: sticky;
+        top: 0;
+
+        @include maxWidth($sm) {
+            position: relative;
+            padding-top: 0;
+        }
+    }
+
+    .section {
+        &-description {
+            max-width: 415rem;
+
+            @include maxWidth($sm) {
+                max-width: 90%;
+            }
+        }
+
+        &-banner {
+            width: 240rem;
+            height: 280rem;
+            margin: 64rem 0 0 89rem;
+
+            @include maxWidth($sm) {
+                margin: 24rem 0;
+                width: 100%;
+                height: 176rem;
+            }
+        }
+    }
+
+    &.faq-investor {
+        margin-bottom: 144rem;
+        @include maxWidth($sm) {
+            margin-bottom: 80rem;
+        }
+    }
+}
