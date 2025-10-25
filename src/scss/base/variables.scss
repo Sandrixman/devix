@@ -13,15 +13,19 @@ $xl: 1920;
     --font-h1: 900 200rem / 70% var(--font-family-primary);
     --font-h2: 600 96rem / 80% var(--font-family-primary);
     --font-h3: 600 72rem / 80% var(--font-family-primary);
+    --font-h4: 600 72rem / 80% var(--font-family-primary);
     /* Headings mobile */
-    --font-h1-mobile: 900 70rem / 70% var(--font-family-primary);
+    --font-h1-mobile: 900 68rem / 70% var(--font-family-primary);
     --font-h2-mobile: 600 38rem / 80% var(--font-family-primary);
-    --font-h3-mobile: 600 34rem / 80% var(--font-family-primary);
+    --font-h3-mobile: 600 32rem / 80% var(--font-family-primary);
+    --font-h4-mobile: 600 27rem / 80% var(--font-family-primary);
 
     /* Body */
+    --font-body-xs: 600 12rem / 100% var(--font-family-primary);
     --font-body-s: 600 18rem / 100% var(--font-family-primary);
     --font-body-m: 600 20rem / 100% var(--font-family-primary);
     /* Body mobile */
+    --font-body-xs-mobile: 600 11rem / 100% var(--font-family-primary);
     --font-body-s-mobile: 600 15rem / 100% var(--font-family-primary);
     --font-body-m-mobile: 600 16rem / 100% var(--font-family-primary);
 

@@ -4,7 +4,7 @@ let lastScrollTop = 0
 const header = document.getElementById("header")
 let hero = document.querySelector(".hero")
 
-export const stickyHeader = () => {
+const stickyHeader = () => {
     window.addEventListener(
         "scroll",
         throttle(function () {
@@ -24,3 +24,5 @@ export const stickyHeader = () => {
         }, 200)
     )
 }
+
+export default stickyHeader

@@ -27,6 +27,15 @@ h3,
         font: var(--font-h3-mobile);
     }
 }
+h4,
+.h4 {
+    font: var(--font-h4);
+    letter-spacing: -0.02em;
+
+    @include maxWidth($sm) {
+        font: var(--font-h4-mobile);
+    }
+}
 
 p {
     font: inherit;

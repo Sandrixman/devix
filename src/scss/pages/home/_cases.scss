@@ -41,13 +41,9 @@
             cursor: pointer;
             position: relative;
             display: flex;
-            padding: 3rem;
-            border-radius: 30rem;
+            padding: 1px;
+            border-radius: 30px;
             background: linear-gradient(180deg, var(--color-gradient-1), var(--color-gradient-2));
-
-            @include maxWidth($sm) {
-                padding: 1rem;
-            }
 
             &::before {
                 content: "";
@@ -72,7 +68,7 @@
 
             .inner-text {
                 position: relative;
-                border-radius: 30rem;
+                border-radius: 30px;
                 padding: 8rem 16rem;
                 align-content: center;
                 background: var(--color-black);
@@ -98,36 +94,34 @@
     }
 
     &-element {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12rem 160rem 12rem 0;
-        min-height: 230rem;
-        position: relative;
-
+        padding: 24rem 160rem 24rem 0;
         @include maxWidth($sm) {
-            flex-direction: column;
-            gap: 20rem;
-            padding: 32rem 0;
+            padding: 0;
         }
 
         &-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 48rem;
+            min-height: 200rem;
+            position: relative;
+            cursor: pointer;
 
             @include maxWidth($sm) {
-                flex-direction: column;
-                gap: 20rem;
-                align-items: flex-start;
+                gap: 16rem;
+                min-height: 180rem;
+                margin: 0;
+
+                .h3 {
+                    padding: 0;
+                }
             }
         }
 
         &-categories {
             display: flex;
             gap: 40rem;
+            align-items: center;
             @include maxWidth($sm) {
                 color: var(--color-gray-100);
+                margin-bottom: 16rem;
             }
         }
 
@@ -141,8 +135,7 @@
         .follower {
             position: absolute;
             pointer-events: none;
-            transform: scale(0);
-            transition: transform 0.3s ease;
+            will-change: transform, opacity;
         }
 
         &-desc {

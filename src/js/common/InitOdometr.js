@@ -1,4 +1,4 @@
-export function initOdometr() {
+function initOdometr() {
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
@@ -14,3 +14,5 @@ export function initOdometr() {
 
     document.querySelectorAll(".odometer").forEach((el) => observer.observe(el))
 }
+
+export default initOdometr

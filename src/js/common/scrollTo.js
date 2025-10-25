@@ -1,6 +1,6 @@
 import { lenis } from "./scroll.js"
 
-export const scrollTo = () => {
+const scrollTo = () => {
     const scrollButtons = document.querySelectorAll(".scroll-action")
     if (scrollButtons.length) {
         scrollButtons.forEach((button) => {
@@ -16,3 +16,5 @@ export const scrollTo = () => {
         })
     }
 }
+
+export default scrollTo

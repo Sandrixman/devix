@@ -28,11 +28,24 @@
     }
 
     &-hidden {
-        // display: none;
-        padding: 122rem 212rem 182rem 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(40px);
+        transition: max-height 1.2s ease-in-out, opacity 0.8s ease-in-out, transform 1s ease-in-out;
 
-        @include maxWidth($sm) {
-            padding: 40rem 0;
+        &.is-visible {
+            max-height: 2000px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        &-wrapper {
+            padding: 122rem 212rem 182rem 0;
+
+            @include maxWidth($sm) {
+                padding: 40rem 0;
+            }
         }
     }
 

@@ -25,11 +25,16 @@
 
     &-title {
         max-width: 750rem;
-        text-indent: 180rem;
 
         @include maxWidth($sm) {
             width: 100%;
-            text-indent: 0;
+        }
+
+        & .indent {
+            margin-left: 180rem;
+            @include maxWidth($sm) {
+                margin-left: 0;
+            }
         }
     }
 
@@ -67,9 +72,11 @@
         text-align: center;
         transition: color 0.3s ease, background 0.3s ease;
 
-        .hidden {
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        @include minWidth($sm) {
+            .hidden {
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
         }
 
         &:hover {
@@ -81,7 +88,7 @@
         }
 
         @include maxWidth($sm) {
-            padding: 40rem;
+            padding: 40rem 50rem;
             gap: 40rem;
         }
 

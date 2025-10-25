@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    @@include('head.html', {})
+    @@include('html/head.html', {})
     <body>
         <main id="wrapper">
             <div class="preloader" id="preloader"></div>
@@ -15,7 +15,6 @@
             </div>
             @@include('html/components/footer.html', {})
         </main>
-        <script src="js/app.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+        <script src="js/app.min.js" defer></script>
     </body>
 </html>

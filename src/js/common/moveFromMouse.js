@@ -17,10 +17,12 @@ function moveFromMouse() {
 
             const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2)
 
-            const threshold = 130
+            const baseWidth = 1920
+            const screenFactor = window.innerWidth / baseWidth
+            const threshold = 100 * screenFactor
 
             if (distance < threshold) {
-                const intensity = 0.5
+                const intensity = 0.3
                 const moveX = -deltaX * intensity
                 const moveY = -deltaY * intensity
 

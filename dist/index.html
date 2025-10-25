@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Devix</title>
 
@@ -52,11 +53,6 @@
         as="font"
         type="font/woff2"
         crossorigin="anonymous"
-    />
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-minimal.min.css"
     />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -116,7 +112,7 @@
                 </p>
             </div>
             <div class="col-md-6">
-                <h1 class="hero-title" data-split-text>
+                <h1 class="hero-title wave-text">
                     Create <br />
                     Beyond <br />
                     <span class="indent">Limits</span>
@@ -125,10 +121,11 @@
                     <button
                         class="btn-circle scroll-action mouse-move-react"
                         data-target="#contact-us"
+                        data-load-order="1"
                     >
                         Get a free consultation
                     </button>
-                    <div class="hero-text">
+                    <div class="hero-text" data-load-order="2">
                         <p>since: 2015</p>
                         <p>AI-powered digital experiences with beauty and purpose.</p>
                     </div>
@@ -144,12 +141,12 @@
                 <p class="section-label label-sticky">[Areas of work]</p>
             </div>
             <div class="work-areas-wrapper col-md-10">
-                <div class="work-areas-block scroll-trigger">
+                <div class="work-areas-block">
                     <div class="work-areas-block-sticky">
                         <div class="work-areas-block-top">
                             <h2 class="work-areas-block-title h2">UX & Product Design</h2>
                             <img
-                                class="work-areas-block-img show-on-scroll"
+                                class="work-areas-block-img"
                                 src="img/home/service-1.jpg"
                                 alt="our service"
                             />
@@ -169,7 +166,7 @@
                         <div class="work-areas-block-top indent-2">
                             <h2 class="work-areas-block-title">Intelligent Web Solutions</h2>
                             <img
-                                class="work-areas-block-img show-on-scroll"
+                                class="work-areas-block-img"
                                 src="img/home/service-2.jpg"
                                 alt="our service"
                             />
@@ -188,7 +185,7 @@
                         <div class="work-areas-block-top">
                             <h2 class="work-areas-block-title h2">AI-Powered MVP Development</h2>
                             <img
-                                class="work-areas-block-img show-on-scroll"
+                                class="work-areas-block-img"
                                 src="img/home/service-3.jpg"
                                 alt="our service"
                             />
@@ -213,17 +210,25 @@
             <p class="section-label">[About us]</p>
             <div class="about-top-wrapper">
                 <picture><source srcset="img/home/about.webp" type="image/webp"><img class="about-img" src="img/home/about.jpg" alt="Team" /></picture>
-                <a href="#" class="btn-circle mouse-move-react"><p>Get a free consultation</p></a>
+                <a
+                    href="#"
+                    class="btn-circle mouse-move-react scroll-action"
+                    data-target="#contact-us"
+                    ><p>Get a free consultation</p></a
+                >
             </div>
         </div>
         <div class="about-bottom">
             <picture><source srcset="img/home/about-small.webp" type="image/webp"><img class="about-mini-img" src="img/home/about-small.jpg" alt="Team" /></picture>
             <div class="about-bottom-wrapper">
-                <h3 class="about-title h3" data-load-order="1">
-                    <span>Devix digital</span> Is a team that turns ideas into effective digital
-                    products.
-                </h3>
-                <div class="about-text animate-on-scroll">
+                <h2 class="about-title h4">
+                    <span class="about-title-span">Devix digital</span>
+                    <span class="wave-text">
+                        Is a team that <br />turns ideas into <br />effective digital
+                        <br />products.
+                    </span>
+                </h2>
+                <div class="about-text">
                     Our approach blends strategy, creativity, and technology to craft digital
                     experiences that are intuitive, impactful, and built to last.
                 </div>
@@ -277,8 +282,9 @@
                     AI-powered digital experiences with beauty and purpose.
                 </p>
             </div>
-            <h2 class="h3 adventages-title">
-                Future-Ready by Design, Strategy, Innovation, Execution, Impact & Growth
+            <h2 class="h4 adventages-title wave-text">
+                <span class="indent">Future</span>-Ready by <br />Design, Strategy,
+                <br />Innovation, Execution, <br />Impact & Growth
             </h2>
         </div>
         <hr />
@@ -311,7 +317,7 @@
     <div class="container-app">
         <div class="cases-top">
             <p class="section-label">[cases]</p>
-            <h2 class="h2">Our projects</h2>
+            <h2 class="h2 wave-text">Our projects</h2>
         </div>
         <div class="cases-tabs">
             <div class="cases-tabs-wrapper scroll-x">
@@ -319,6 +325,7 @@
                     <div class="inner-text">All</div>
                 </div>
                 <div class="cases-tabs-item" data-filter="product-design">
+                    <div class="overlay"></div>
                     <div class="inner-text">Product design</div>
                 </div>
                 <div class="cases-tabs-item" data-filter="e-commerce">
@@ -339,136 +346,150 @@
         <div class="cases-content">
             <div class="cases-element-box" data-category="e-commerce">
                 <hr />
-                <div class="cases-element follower-box">
-                    <h3 class="h3">The Future of Retail</h3>
-                    <div class="cases-element-wrapper">
-                        <div class="cases-element-categories"><p>e-commerce</p></div>
-                        <p class="cases-element-desc">
-                            Smart design meets automation in a seamless shopping experience.
-                        </p>
+                <div class="cases-element">
+                    <div class="cases-element-wrapper align-content-center row">
+                        <h3 class="h3 col-md-6">The Future of Retail</h3>
+                        <div class="col-md-6 row justify-content-between">
+                            <div class="cases-element-categories"><p>e-commerce</p></div>
+                            <p class="cases-element-desc">
+                                Smart design meets automation in a seamless shopping experience.
+                            </p>
+                        </div>
+                        <img
+                            class="cases-element-img follower"
+                            src="img/home/service-1.jpg"
+                            alt="case"
+                        />
                     </div>
-                    <img
-                        class="cases-element-img follower"
-                        src="img/home/service-1.jpg"
-                        alt="case"
-                    />
                 </div>
             </div>
             <div class="cases-element-box" data-category="branding">
                 <hr />
-                <div class="cases-element follower-box">
-                    <h3 class="h3">Brand with a Pulse</h3>
-                    <div class="cases-element-wrapper">
-                        <div class="cases-element-categories"><p>branding</p></div>
-                        <p class="cases-element-desc">
-                            redesigning the shopping flow for performance and clarity
-                        </p>
+                <div class="cases-element">
+                    <div class="cases-element-wrapper align-content-center row">
+                        <h3 class="h3 col-md-6">Brand with a Pulse</h3>
+                        <div class="col-md-6 row justify-content-between">
+                            <div class="cases-element-categories"><p>branding</p></div>
+                            <p class="cases-element-desc">
+                                redesigning the shopping flow for performance and clarity
+                            </p>
+                        </div>
+                        <img
+                            class="cases-element-img follower"
+                            src="img/home/service-1.jpg"
+                            alt="case"
+                        />
                     </div>
-                    <img
-                        class="cases-element-img follower"
-                        src="img/home/service-1.jpg"
-                        alt="case"
-                    />
                 </div>
             </div>
             <div class="cases-element-box" data-category="fintech-tech">
                 <hr />
-                <div class="cases-element follower-box">
-                    <h3 class="h3">Pixel Perfect Checkout</h3>
-                    <div class="cases-element-wrapper">
-                        <div class="cases-element-categories"><p>Fintech / Tech</p></div>
-                        <p class="cases-element-desc">
-                            An e-commerce platform optimized for seamless user experience and
-                            automated efficiency.
-                        </p>
+                <div class="cases-element">
+                    <div class="cases-element-wrapper align-content-center row">
+                        <h3 class="h3 col-md-6">Pixel Perfect Checkout</h3>
+                        <div class="col-md-6 row justify-content-between">
+                            <div class="cases-element-categories"><p>Fintech / Tech</p></div>
+                            <p class="cases-element-desc">
+                                An e-commerce platform optimized for seamless user experience and
+                                automated efficiency.
+                            </p>
+                        </div>
+                        <img
+                            class="cases-element-img follower"
+                            src="img/home/service-1.jpg"
+                            alt="case"
+                        />
                     </div>
-                    <img
-                        class="cases-element-img follower"
-                        src="img/home/service-1.jpg"
-                        alt="case"
-                    />
                 </div>
             </div>
             <div class="cases-element-box" data-category="branding websites">
                 <hr />
-                <div class="cases-element follower-box">
-                    <h3 class="h3">From Zero to Launch</h3>
-                    <div class="cases-element-wrapper">
-                        <div class="cases-element-categories">
-                            <p>branding</p>
-                            <p>website</p>
+                <div class="cases-element">
+                    <div class="cases-element-wrapper align-content-center row">
+                        <h3 class="h3 col-md-6">From Zero to Launch</h3>
+                        <div class="col-md-6 row justify-content-between">
+                            <div class="cases-element-categories">
+                                <p>branding</p>
+                                <p>website</p>
+                            </div>
+                            <p class="cases-element-desc">
+                                An e-commerce platform optimized for seamless user experience and
+                                automated efficiency.
+                            </p>
                         </div>
-                        <p class="cases-element-desc">
-                            An e-commerce platform optimized for seamless user experience and
-                            automated efficiency.
-                        </p>
+                        <img
+                            class="cases-element-img follower"
+                            src="img/home/service-1.jpg"
+                            alt="case"
+                        />
                     </div>
-                    <img
-                        class="cases-element-img follower"
-                        src="img/home/service-1.jpg"
-                        alt="case"
-                    />
                 </div>
             </div>
             <div class="cases-element-box" data-category="branding websites">
                 <hr />
-                <div class="cases-element follower-box">
-                    <h3 class="h3">The Future of Retail</h3>
-                    <div class="cases-element-wrapper">
-                        <div class="cases-element-categories">
-                            <p>branding</p>
-                            <p>e-commerce</p>
+                <div class="cases-element">
+                    <div class="cases-element-wrapper align-content-center row">
+                        <h3 class="h3 col-md-6">The Future of Retail</h3>
+                        <div class="col-md-6 row justify-content-between">
+                            <div class="cases-element-categories">
+                                <p>branding</p>
+                                <p>e-commerce</p>
+                            </div>
+                            <p class="cases-element-desc">
+                                An e-commerce platform optimized for seamless user experience and
+                                automated efficiency.
+                            </p>
                         </div>
-                        <p class="cases-element-desc">
-                            An e-commerce platform optimized for seamless user experience and
-                            automated efficiency.
-                        </p>
+                        <img
+                            class="cases-element-img follower"
+                            src="img/home/service-1.jpg"
+                            alt="case"
+                        />
                     </div>
-                    <img
-                        class="cases-element-img follower"
-                        src="img/home/service-1.jpg"
-                        alt="case"
-                    />
                 </div>
             </div>
             <div class="cases-element-box" data-category="branding websites">
                 <hr />
-                <div class="cases-element follower-box">
-                    <h3 class="h3">The Future of Retail</h3>
-                    <div class="cases-element-wrapper">
-                        <div class="cases-element-categories">
-                            <p>e-commerce</p>
+                <div class="cases-element">
+                    <div class="cases-element-wrapper align-content-center row">
+                        <h3 class="h3 col-md-6">The Future of Retail</h3>
+                        <div class="col-md-6 row justify-content-between">
+                            <div class="cases-element-categories">
+                                <p>e-commerce</p>
+                            </div>
+                            <p class="cases-element-desc">
+                                An e-commerce platform optimized for seamless user experience and
+                                automated efficiency.
+                            </p>
                         </div>
-                        <p class="cases-element-desc">
-                            An e-commerce platform optimized for seamless user experience and
-                            automated efficiency.
-                        </p>
+                        <img
+                            class="cases-element-img follower"
+                            src="img/home/service-1.jpg"
+                            alt="case"
+                        />
                     </div>
-                    <img
-                        class="cases-element-img follower"
-                        src="img/home/service-1.jpg"
-                        alt="case"
-                    />
                 </div>
             </div>
             <div class="cases-element-box" data-category="branding websites">
                 <hr />
-                <div class="cases-element follower-box">
-                    <h3 class="h3">The Future of Retail</h3>
-                    <div class="cases-element-wrapper">
-                        <div class="cases-element-categories">
-                            <p>Website</p>
+                <div class="cases-element">
+                    <div class="cases-element-wrapper align-content-center row">
+                        <h3 class="h3 col-md-6">The Future of Retail</h3>
+                        <div class="col-md-6 row justify-content-between">
+                            <div class="cases-element-categories">
+                                <p>Website</p>
+                            </div>
+                            <p class="cases-element-desc">
+                                An e-commerce platform optimized for seamless user experience and
+                                automated efficiency.
+                            </p>
                         </div>
-                        <p class="cases-element-desc">
-                            An e-commerce platform optimized for seamless user experience and
-                            automated efficiency.
-                        </p>
+                        <img
+                            class="cases-element-img follower"
+                            src="img/home/service-1.jpg"
+                            alt="case"
+                        />
                     </div>
-                    <img
-                        class="cases-element-img follower"
-                        src="img/home/service-1.jpg"
-                        alt="case"
-                    />
                 </div>
             </div>
 
@@ -482,47 +503,49 @@
                     <section class="contact-us" id="contact-us">
     <div class="container-app">
         <div class="contact-us-visible">
-            <h2 class="h3">Contact us</h2>
+            <h2 class="h3 wave-text">Contact us</h2>
             <div class="scroll-wrapper">
                 <p>Scroll down</p>
                 <img src="img/icons/scroll-down-icon.svg" alt="icon" />
             </div>
         </div>
         <div class="contact-us-hidden">
-            <p class="contact-us-label">[Contact us]</p>
-            <div class="contact-us-content">
-                <div class="contact-us-content-top">
-                    <h2 class="h3 contact-us-title">
-                        Ready to scale your business with AI&#8209;driven automation?
-                    </h2>
-                    <picture><source srcset="img/home/contact-mini.webp" type="image/webp"><img class="contact-us-mini-img" src="img/home/contact-mini.jpg" alt="" /></picture>
-                </div>
-                <div class="contact-us-content-bottom">
-                    <picture><source srcset="img/home/contact.webp" type="image/webp"><img class="contact-us-img" src="img/home/contact.jpg" alt="service-team" /></picture>
-                    <form class="contact-us-form">
-                        <label class="field">
-                            <span class="field-label">Name</span>
-                            <input type="email" class="field-item" />
-                            <span class="field-message __success">Success message</span>
-                            <span class="field-message __error">Error message</span>
-                        </label>
-                        <label class="field">
-                            <span class="field-label">email</span>
-                            <input type="email" class="field-item" />
-                            <span class="field-message __success">Success message</span>
-                            <span class="field-message __error">Error message</span>
-                        </label>
-                        <label class="field">
-                            <span class="field-label">question</span>
-                            <span class="field-resize"></span>
-                            <textarea class="field-item"></textarea>
-                            <span class="field-message __success">Success message</span>
-                            <span class="field-message __error">Error message</span>
-                        </label>
-                        <div class="form-action">
-                            <button class="btn" data-modal-open="#thanks">Send</button>
-                        </div>
-                    </form>
+            <div class="contact-us-hidden-wrapper">
+                <p class="contact-us-label">[Contact us]</p>
+                <div class="contact-us-content">
+                    <div class="contact-us-content-top">
+                        <h2 class="h3 contact-us-title">
+                            Ready to scale your business with AI&#8209;driven automation?
+                        </h2>
+                        <picture><source srcset="img/home/contact-mini.webp" type="image/webp"><img class="contact-us-mini-img" src="img/home/contact-mini.jpg" alt="" /></picture>
+                    </div>
+                    <div class="contact-us-content-bottom">
+                        <picture><source srcset="img/home/contact.webp" type="image/webp"><img class="contact-us-img" src="img/home/contact.jpg" alt="service-team" /></picture>
+                        <form class="contact-us-form">
+                            <label class="field">
+                                <span class="field-label">Name</span>
+                                <input type="text" class="field-item" placeholder=" " />
+                                <span class="field-message __error">Error message</span>
+                            </label>
+
+                            <label class="field">
+                                <span class="field-label">email</span>
+                                <input type="email" class="field-item" placeholder=" " />
+                                <span class="field-message __error">Error message</span>
+                            </label>
+
+                            <label class="field">
+                                <span class="field-label">question</span>
+                                <span class="field-resize"></span>
+                                <textarea class="field-item" placeholder=" "></textarea>
+                                <span class="field-message __error">Error message</span>
+                            </label>
+
+                            <div class="form-action">
+                                <button class="btn">Send</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -542,7 +565,7 @@
         </div>
         <div class="col-md-2 col-12">
             <p class="footer-label">call us</p>
-            <a href="tel:+66 666 66 66 666" class="footer-item">+380 63 412 58 92</a>
+            <a href="tel:+380634125892" class="footer-item">+380 63 412 58 92</a>
         </div>
         <div class="col-md-5 col-12">
             <p class="footer-label">Social networks</p>
@@ -558,7 +581,6 @@
 </footer>
 
         </main>
-        <script src="js/app.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+        <script src="js/app.min.js" defer></script>
     </body>
 </html>

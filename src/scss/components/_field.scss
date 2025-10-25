@@ -1,71 +1,91 @@
 .field {
-    display: block;
     position: relative;
+    display: block;
 
     &-label {
         position: absolute;
-        top: 0;
         left: 0;
-        display: inline-block;
+        top: 24rem;
+        font: var(--font-body-m);
+        text-transform: uppercase;
+        color: var(--color-black);
         pointer-events: none;
+        transform-origin: left top;
+        transition: transform 0.25s var(--transition-easing), top 0.25s var(--transition-easing),
+            font-size 0.25s var(--transition-easing), color 0.25s var(--transition-easing);
+    }
+
+    &:has(.field-item:hover) .field-label {
+        color: var(--color-hover);
     }
 
     &-item {
-        height: 45rem;
         width: 100%;
+        height: 65rem;
         color: var(--color-black);
-        padding: 24rem 8rem 8rem;
-        border-bottom: 1rem var(--color-black) solid;
+        border: 0;
+        border-bottom: 1rem solid var(--color-black);
         font: var(--font-body-m);
+        text-transform: uppercase;
         transition: border-color var(--transition-duration) var(--transition-easing);
 
         &:hover,
         &:focus {
-            border-color: var(--color-gray-600);
+            border-color: var(--color-hover);
+        }
+
+        &::placeholder {
+            color: transparent;
+        }
+        &::-ms-input-placeholder {
+            color: transparent;
         }
 
         @include maxWidth($sm) {
             font: var(--font-body-m-mobile);
-            padding: 27rem 14rem 16rem;
-        }
-
-        &::-webkit-input-placeholder {
-            color: var(--color-black);
-        }
-        &::-moz-placeholder {
-            color: var(--color-black);
-        }
-        &:-ms-input-placeholder {
-            color: var(--color-black);
-        }
-        &:-moz-placeholder {
-            color: var(--color-black);
         }
     }
 
     textarea.field-item {
-        resize: vertical;
-        min-height: 45rem;
+        margin-top: 24rem;
+        min-height: 65rem;
         height: 150rem;
-
+        resize: vertical;
         &::-webkit-resizer {
             display: none;
         }
     }
 
+    &:focus-within .field-label,
+    &:has(.field-item:not(:placeholder-shown)) .field-label {
+        top: 0;
+        font: var(--font-body-xs);
+        color: var(--color-gray-100);
+
+        @include maxWidth($sm) {
+            font: var(--font-body-xs-mobile);
+        }
+    }
+
     &-message {
         position: absolute;
-        top: 8rem;
-        right: 16rem;
-        pointer-events: none;
+        bottom: -24rem;
+        left: 0;
         display: none;
-
-        &.__success {
-            color: var(--color-success);
-        }
+        pointer-events: none;
 
         &.__error {
             color: var(--color-error);
+        }
+    }
+
+    &.__error {
+        .field-item {
+            color: var(--color-error); /* ← змінює колір тексту */
+            border-color: var(--color-error);
+        }
+        .field-message.__error {
+            display: inline-block;
         }
     }
 
@@ -75,37 +95,7 @@
         height: 16rem;
         bottom: 10rem;
         right: 2rem;
-        background-image: url(../img/icons/resize.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
+        background: url(../img/icons/resize.svg) no-repeat center / contain;
         pointer-events: none;
-    }
-
-    /* states */
-    &.__success {
-        .field {
-            &-item {
-                border-color: var(--color-success);
-            }
-            &-message {
-                &.__success {
-                    display: inline-block;
-                }
-            }
-        }
-    }
-
-    &.__error {
-        .field {
-            &-item {
-                border-color: var(--color-error);
-            }
-            &-message {
-                &.__error {
-                    display: inline-block;
-                }
-            }
-        }
     }
 }

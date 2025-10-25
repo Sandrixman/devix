@@ -60,9 +60,9 @@
         line-height: 0.8;
         font-weight: 900;
         letter-spacing: -0.04em;
-        line-height: 80%;
         margin: 40rem -20rem 0;
         text-align: center;
+        overflow: hidden;
 
         @include maxWidth($sm) {
             font-size: 51rem;
