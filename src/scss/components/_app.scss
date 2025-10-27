@@ -152,6 +152,28 @@ svg {
     will-change: transform, opacity;
 }
 
+.parallax-mask {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.parallax-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    will-change: transform;
+}
+
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;

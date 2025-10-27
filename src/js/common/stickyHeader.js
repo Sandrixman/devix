@@ -1,28 +1,32 @@
-import throttle from "lodash/throttle.js"
+import { lenis } from "./scroll.js"
 
 let lastScrollTop = 0
 const header = document.getElementById("header")
-let hero = document.querySelector(".hero")
 
 const stickyHeader = () => {
-    window.addEventListener(
-        "scroll",
-        throttle(function () {
-            let currentScroll = window.scrollY || document.documentElement.scrollTop
-            hero = document.querySelector(".hero") // update after changed page
-            let heroHeight = hero?.offsetHeight ?? header.offsetHeight
+    if (!header) return
+    let scheduled = false
+
+    lenis.on("scroll", () => {
+        if (scheduled) return
+
+        scheduled = true
+        requestAnimationFrame(() => {
+            scheduled = false
+
+            const currentScroll = lenis.scroll
+            const hero = document.querySelector(".hero")
+            const heroHeight = hero?.offsetHeight ?? header.offsetHeight
 
             if (currentScroll > lastScrollTop && currentScroll > heroHeight) {
                 header.style.top = "-100rem"
-            } else if (currentScroll === lastScrollTop) {
-                return
-            } else {
+            } else if (currentScroll < lastScrollTop) {
                 header.style.top = "40rem"
             }
 
             lastScrollTop = currentScroll
-        }, 200)
-    )
+        })
+    })
 }
 
 export default stickyHeader

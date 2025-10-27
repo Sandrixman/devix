@@ -50,3 +50,10 @@
         display: flex;
     }
 }
+
+.odometer {
+    will-change: transform, contents;
+    contain: layout paint style;
+    transform: translateZ(0);
+    display: inline-block;
+}

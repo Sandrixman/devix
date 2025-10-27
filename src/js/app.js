@@ -13,7 +13,9 @@ import follower from "./common/follower.js"
 import animateWaveText from "./common/waveText.js"
 import formValidation from "./common/formValidation.js"
 import initStickyBlock from "./common/stickyBlock.js"
+import initParallaxImages from "./common/paralax.js"
 
+initParallaxImages()
 scrollTo()
 scrollVisibility()
 splitText()

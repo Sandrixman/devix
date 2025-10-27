@@ -13,7 +13,18 @@ function initStickyBlock() {
             return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }
         },
     })
-    lenis.on("scroll", ScrollTrigger.update)
+
+    let scheduled = false
+    lenis.on("scroll", () => {
+        if (!scheduled) {
+            scheduled = true
+            requestAnimationFrame(() => {
+                ScrollTrigger.update()
+                scheduled = false
+            })
+        }
+    })
+
     ScrollTrigger.addEventListener("refresh", () => lenis.resize())
     ScrollTrigger.refresh()
 

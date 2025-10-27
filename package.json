@@ -1,5 +1,5 @@
 {
-    "name": "gulp-2022",
+    "name": "devix",
     "version": "1.0.0",
     "description": "",
     "main": "gulpfile.js",
@@ -9,9 +9,9 @@
         "build": "gulp build --build",
         "otfToTtf": "gulp otfToTtf"
     },
-    "author": "Studiopresto",
     "license": "ISC",
     "devDependencies": {
+        "@dogstudio/highway": "^2.2.1",
         "@splidejs/splide": "^4.1.4",
         "@studio-freight/lenis": "^1.0.34",
         "autoprefixer": "^10.4.14",
