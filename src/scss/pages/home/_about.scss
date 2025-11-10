@@ -66,7 +66,7 @@
         &-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 154rem;
+            gap: 170rem;
             z-index: 1;
 
             @include maxWidth($sm) {
@@ -94,10 +94,13 @@
 
     &-text {
         width: 358rem;
+        line-height: 120%;
+        letter-spacing: -0.5rem;
+        text-align: justify;
+        color: var(--color-gray-100);
 
         @include maxWidth($sm) {
             width: 100%;
-            color: var(--color-gray-100);
         }
     }
 }

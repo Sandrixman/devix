@@ -37,6 +37,7 @@
   --color-error: #ff5c5c;
   --color-link: #3870ff;
   --color-hover: #9e94f5;
+  --color-footer-hover: #126cd8;
   --transition-duration: 0.5s;
   --transition-easing: ease;
 }
@@ -1482,9 +1483,16 @@ a.text-dark:focus {
   transform: translateY(0);
 }
 
+.section.hero {
+  align-items: start;
+}
+
 .hero {
-  min-height: 100svh;
-  padding-top: 50rem;
+  padding-top: 105rem;
+}
+
+.hero .container-app {
+  margin-block: 0;
 }
 
 .hero-banner {
@@ -1525,7 +1533,7 @@ a.text-dark:focus {
 .hero-info {
   display: flex;
   align-items: flex-end;
-  gap: 290rem;
+  gap: 276rem;
 }
 
 .hero-text {
@@ -1533,7 +1541,6 @@ a.text-dark:focus {
   flex-direction: column;
   gap: 12rem;
   width: 210rem;
-  margin-left: 40rem;
 }
 
 .hero-text p:nth-of-type(2) {
@@ -1604,7 +1611,7 @@ a.text-dark:focus {
 .about-bottom-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 154rem;
+  gap: 170rem;
   z-index: 1;
 }
 
@@ -1622,6 +1629,10 @@ a.text-dark:focus {
 
 .about-text {
   width: 358rem;
+  line-height: 120%;
+  letter-spacing: -0.5rem;
+  text-align: justify;
+  color: var(--color-gray-100);
 }
 
 .reputation-wrapper {
@@ -1644,9 +1655,33 @@ a.text-dark:focus {
   margin-left: 312rem;
 }
 
+.reputation-item.mt-140 {
+  margin-top: 140rem;
+}
+
+.reputation-item > p {
+  color: var(--color-gray-100);
+}
+
 .reputation-title {
   margin-bottom: 24rem;
   display: flex;
+}
+
+.reputation-title.h1 {
+  line-height: 65%;
+}
+
+.reputation-title.bold {
+  font-weight: 800;
+}
+
+.reputation-title .correction {
+  line-height: 1;
+}
+
+.reputation-title .correction-2 {
+  line-height: 0.9;
 }
 
 .odometer {
@@ -1723,7 +1758,7 @@ a.text-dark:focus {
 }
 
 .cases-element {
-  padding: 24rem 160rem 24rem 0;
+  padding: 18rem 160rem 18rem 0;
 }
 
 .cases-element-wrapper {
@@ -1736,6 +1771,7 @@ a.text-dark:focus {
   display: flex;
   gap: 40rem;
   align-items: center;
+  color: var(--color-gray-100);
 }
 
 .cases-element-img {
@@ -1750,6 +1786,7 @@ a.text-dark:focus {
 
 .cases-element-desc {
   width: 280rem;
+  color: var(--color-gray-100);
 }
 
 .cases-decor-img {
@@ -1854,7 +1891,7 @@ a.text-dark:focus {
 .adventages-top {
   display: flex;
   justify-content: space-between;
-  margin-right: 168rem;
+  margin-right: 184rem;
 }
 
 .adventages-wrapper {
@@ -1862,6 +1899,10 @@ a.text-dark:focus {
   flex-direction: column;
   justify-content: space-between;
   width: 210rem;
+}
+
+.adventages-text {
+  color: var(--color-gray-100);
 }
 
 .adventages-title {
@@ -1929,19 +1970,25 @@ a.text-dark:focus {
 
 .work-areas-wrapper {
   max-width: 1448rem !important;
-  padding-top: 152rem;
+  padding-top: 180rem;
 }
 
 .work-areas-block {
   display: flex;
   flex-direction: column;
-  height: 640rem;
   position: relative;
+}
+
+.work-areas-block:not(:last-child) {
+  height: 730rem;
 }
 
 .work-areas-block-sticky {
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .work-areas-block-top,
@@ -1956,6 +2003,10 @@ a.text-dark:focus {
   margin-bottom: 120rem;
 }
 
+.work-areas-block-bottom {
+  align-items: flex-end;
+}
+
 .work-areas-block-title {
   max-width: 610rem;
 }
@@ -1966,6 +2017,10 @@ a.text-dark:focus {
 
 .work-areas-block-desc {
   max-width: 358rem;
+  line-height: 120%;
+  letter-spacing: -0.5rem;
+  text-align: justify;
+  color: var(--color-gray-100);
 }
 
 .pnf-box {
@@ -2183,6 +2238,11 @@ svg {
   opacity: 0.3;
 }
 
+.header-panel-nav-desk {
+  display: flex;
+  align-items: center;
+}
+
 .header-panel-nav-desk ul {
   display: flex;
   gap: 40rem;
@@ -2235,6 +2295,7 @@ svg {
 
 .header-panel-action {
   display: flex;
+  align-items: center;
   gap: 12rem;
   margin-left: 44rem;
 }
@@ -2253,6 +2314,11 @@ svg {
   height: 32rem;
   min-height: 32rem;
   transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn span {
+  position: relative;
+  top: -1rem;
 }
 
 .btn:hover {
@@ -4064,6 +4130,15 @@ svg {
 }
 
 @media only screen and (min-width: 768px) {
+  .cases-element-categories {
+    padding-left: 100rem;
+    padding-right: 0;
+  }
+
+  .adventages-title {
+    margin-top: 124rem;
+  }
+
   .adventages-card .hidden {
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -4076,7 +4151,7 @@ svg {
 
   .work-areas-block-top.indent-2,
   .work-areas-block-bottom.indent-2 {
-    margin-right: 515rem;
+    margin-right: 485rem;
   }
 
   .header-panel-logo {
@@ -4085,6 +4160,14 @@ svg {
 
   .header-panel-action .burger {
     display: none;
+  }
+
+  .footer-label.ml-150 {
+    margin-left: 150rem;
+  }
+
+  .footer-item-list {
+    margin-left: 150rem;
   }
 }
 
@@ -5821,7 +5904,6 @@ svg {
 
   .about-text {
     width: 100%;
-    color: var(--color-gray-100);
   }
 
   .reputation-wrapper {
@@ -5891,7 +5973,6 @@ svg {
   }
 
   .cases-element-categories {
-    color: var(--color-gray-100);
     margin-bottom: 16rem;
   }
 

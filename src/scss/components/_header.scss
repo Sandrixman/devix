@@ -56,6 +56,9 @@
         }
 
         &-nav-desk {
+            display: flex;
+            align-items: center;
+
             ul {
                 display: flex;
                 gap: 40rem;
@@ -121,6 +124,7 @@
 
         &-action {
             display: flex;
+            align-items: center;
             gap: 12rem;
             margin-left: 44rem;
 

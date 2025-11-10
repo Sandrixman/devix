@@ -2,7 +2,7 @@
     &-top {
         display: flex;
         justify-content: space-between;
-        margin-right: 168rem;
+        margin-right: 184rem;
 
         @include maxWidth($sm) {
             flex-direction: column;
@@ -23,9 +23,16 @@
         }
     }
 
+    &-text {
+        color: var(--color-gray-100);
+    }
+
     &-title {
         max-width: 750rem;
 
+        @include minWidth($sm) {
+            margin-top: 124rem;
+        }
         @include maxWidth($sm) {
             width: 100%;
         }

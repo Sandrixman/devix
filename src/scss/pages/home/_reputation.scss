@@ -43,11 +43,33 @@
                 align-items: flex-end;
             }
         }
+        &.mt-140 {
+            margin-top: 140rem;
+        }
+
+        > p {
+            color: var(--color-gray-100);
+        }
     }
 
     &-title {
         margin-bottom: 24rem;
         display: flex;
+
+        &.h1 {
+            line-height: 65%;
+        }
+
+        &.bold {
+            font-weight: 800;
+        }
+
+        .correction {
+            line-height: 1;
+        }
+        .correction-2 {
+            line-height: 0.9;
+        }
     }
 }
 

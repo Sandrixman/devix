@@ -94,7 +94,7 @@
     }
 
     &-element {
-        padding: 24rem 160rem 24rem 0;
+        padding: 18rem 160rem 18rem 0;
         @include maxWidth($sm) {
             padding: 0;
         }
@@ -119,8 +119,13 @@
             display: flex;
             gap: 40rem;
             align-items: center;
+            color: var(--color-gray-100);
+
+            @include minWidth($sm) {
+                padding-left: 100rem;
+                padding-right: 0;
+            }
             @include maxWidth($sm) {
-                color: var(--color-gray-100);
                 margin-bottom: 16rem;
             }
         }
@@ -140,6 +145,8 @@
 
         &-desc {
             width: 280rem;
+            color: var(--color-gray-100);
+
             @include maxWidth($sm) {
                 width: 100%;
             }

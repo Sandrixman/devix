@@ -11,7 +11,7 @@
 
     &-wrapper {
         max-width: 1448rem !important;
-        padding-top: 152rem;
+        padding-top: 180rem;
 
         @include maxWidth($sm) {
             padding-top: 80rem;
@@ -20,12 +20,18 @@
     &-block {
         display: flex;
         flex-direction: column;
-        height: 640rem;
         position: relative;
+
+        &:not(:last-child) {
+            height: 730rem;
+        }
 
         &-sticky {
             position: sticky;
             top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         &-top,
@@ -46,7 +52,7 @@
             }
             &.indent-2 {
                 @include minWidth($sm) {
-                    margin-right: 515rem;
+                    margin-right: 485rem;
                 }
             }
         }
@@ -56,6 +62,10 @@
             @include maxWidth($sm) {
                 margin-bottom: 40rem;
             }
+        }
+
+        &-bottom {
+            align-items: flex-end;
         }
 
         &-title {
@@ -77,6 +87,11 @@
 
         &-desc {
             max-width: 358rem;
+            line-height: 120%;
+            letter-spacing: -0.5rem;
+            text-align: justify;
+            color: var(--color-gray-100);
+
             @include maxWidth($sm) {
                 margin-bottom: 40rem;
             }

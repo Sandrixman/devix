@@ -9,8 +9,11 @@ function animateWaveText() {
 
         // processing text nodes with visible text
         nodes.forEach((node) => {
-            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "") {
-                const text = node.textContent
+            if (
+                node.nodeType === Node.TEXT_NODE &&
+                node.textContent.trim() !== "" // <– важливо: відсікає пусті текстові вузли
+            ) {
+                const text = node.textContent.trimStart() // <– прибирає пробіли на початку рядка
                 const fragment = document.createDocumentFragment()
 
                 text.split("").forEach((char) => {
